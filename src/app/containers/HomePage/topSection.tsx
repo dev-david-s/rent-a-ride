@@ -3,6 +3,9 @@ import tw from "twin.macro";
 
 import MclarenCarImg from '../../../assets/images/mclaren-orange-big.png';
 import BlobImg from '../../../assets/images/blob.svg';
+
+import { Button } from "../../components/button";
+
 import { SCREENS } from "../../components/responsive";
 
 const TopSectionContainer = styled.div`
@@ -143,6 +146,14 @@ const StandaloneCar = styled.div`
     }
 `;
 
+const ButtonsContainer = styled.div`
+    ${tw`
+        flex
+        flex-wrap
+        mt-4
+    `};
+`;
+
 export function TopSection() {
 
     return (
@@ -155,6 +166,10 @@ export function TopSection() {
                     Always choose the best car from our local stores or order it remotely at the best price
                     for you and get the best quality cars for as long as you like
                 </Description>
+                <ButtonsContainer>
+                    <Button theme="outlined" text="Book Your Ride" />
+                    <Button theme="filled" text="Sell Your Car" />
+                </ButtonsContainer>
             </LeftContainer>
             <RightContainer>
                 <BlobContainer>
