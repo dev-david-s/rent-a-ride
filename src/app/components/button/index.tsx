@@ -3,7 +3,7 @@ import tw from "twin.macro";
 
 
 interface IButtonProps {
-    theme: "filled" | "outlined";
+    theme?: "filled" | "outlined";
     text: string;
 }
 
