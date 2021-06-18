@@ -13,11 +13,14 @@ import { useState } from "react";
 import { SCREENS } from "../responsive";
 
 const CardContainer = styled.div`
-    min-height: 4.3em;
+    min-height: 10em;
     box-shadow: 0 1.3px 12px -3px rgba(0,0,0,.4);
     ${tw`
         flex
-        justify-center
+        flex-col
+        md:flex-row
+        justify-evenly
+        md:justify-center
         items-center
         rounded-md
         bg-white
@@ -27,13 +30,15 @@ const CardContainer = styled.div`
         pl-2
         md:pt-2
         md:pb-2
-        md:pl-9
-        md:pr-9
     `};
+    
+    @media (min-width: ${SCREENS.md}) {
+        min-height: 4.3em;
+    }
 `;
 
 const ItemContainer = styled.div`
-    ${tw`flex relative`};
+    ${tw`flex relative `};
 `;
 
 const Icon = styled.span`
@@ -71,6 +76,8 @@ const LineSeparator = styled.span`
     width: 2px;
     height: 45%;
     ${tw`
+        hidden
+        md:block
         bg-gray-300
         mr-2
         ml-2
@@ -84,15 +91,15 @@ const DateCalendar = styled(Calendar)`
     max-width: none;
     user-select: none;
     top: 2em;
-    left: 0em;
-
-    ${({ offset }: any) => offset && css`
-        left: -6em;
-    `};
+    left: -7.8em;
+    z-index: 1;
 
     @media (min-width: ${SCREENS.md}) {
         top: 3em;
         left: -2em;
+        ${({ offset }: any) => offset && css`
+            left: -6em;
+        `};
     }
 ` as any;
 
