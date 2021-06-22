@@ -2,6 +2,8 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { SCREENS } from "../../components/responsive";
 
+import JeepImg from '../../../assets/images/jeep.png';
+
 const AboutUsContainer = styled.div`
     ${tw`
         w-full
@@ -21,7 +23,7 @@ const AboutUsContainer = styled.div`
 const CarContainer = styled.div`
     width: auto;
     height: 15em;
-    margin-left: -30px;
+    margin-left: -50px;
 
     img {
         width: auto;
@@ -44,7 +46,7 @@ const CarContainer = styled.div`
 
 const InfoContainer = styled.div`
     ${tw`
-        w-1/2
+        md:w-1/2
         flex
         flex-col
         md:ml-6
@@ -64,7 +66,7 @@ const Title = styled.h1`
 
 const InfoText = styled.p`
     ${tw`
-        max-w-2xl
+        md:max-w-2xl
         text-sm
         md:text-base
         text-gray-500
@@ -74,5 +76,14 @@ const InfoText = styled.p`
 `;
 
 export function AboutUs() {
-
+    return <AboutUsContainer>
+        <CarContainer>
+            <img src={JeepImg} />
+        </CarContainer>
+        <InfoContainer>
+            <Title>Feel The Best Experience With Our Rental Deals</Title>
+            <InfoText>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam voluptatibus voluptatum qui consequuntur nostrum quia in praesentium, porro veritatis corrupti illo culpa. Aliquam a, deleniti amet nobis quibusdam quasi minus explicabo veritatis sunt cupiditate odio rem voluptates vitae harum ipsa aut hic praesentium. Dolor iure non impedit, vel nostrum asperiores similique recusandae laborum eius quam unde reiciendis quibusdam sit aliquid.            </InfoText>
+        </InfoContainer>
+    </AboutUsContainer>
 }
